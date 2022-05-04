@@ -1,0 +1,49 @@
+import java.util.HashMap;
+ 
+public class Program {
+	
+    public static void main(String[] args) {
+        HashMap<String, String> hashmap = new HashMap<>();
+        hashmap.put("f.e", "for example");
+        hashmap.put("etc.", "and so on");
+        hashmap.put("i.e", "more precisely");
+ 
+        printKeys(hashmap);
+        System.out.println("---");
+        printKeysWhere(hashmap, "i");
+        System.out.println("---");
+        printValuesOfKeysWhere(hashmap, ".e");
+        
+        System.out.println("------------");
+        HashMap<String, String> hm = new HashMap<>();
+        hm.put("abcd", "jkl");
+        hm.put("def", "mno");
+        hm.put("ghi", "pqr");
+        printKeysWhere(hm, "a");
+ 
+    }
+ 
+    //methods
+    public static void printKeys(HashMap<String, String> hashmap) {
+        for (String variableName : hashmap.keySet()) {
+            System.out.println(variableName);
+        }
+    }
+ 
+    public static void printKeysWhere(HashMap<String, String> hashmap, String text) {
+        for (String key : hashmap.keySet()) {
+            if (key.contains(text)) {
+                System.out.println(key);
+            }
+        }
+    }
+ 
+    public static void printValuesOfKeysWhere(HashMap<String, String> hashmap, String text) {
+        for (String key : hashmap.keySet()) {
+            if (key.contains(text)) {
+                System.out.println(hashmap.get(key));
+            }
+        }
+    }
+}
+ 
